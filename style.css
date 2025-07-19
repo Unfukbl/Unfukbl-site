@@ -1,0 +1,40 @@
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+}
+header {
+    background-color: #fff;
+    padding: 2rem 1rem;
+}
+.logo {
+    width: 180px;
+    margin-bottom: 1rem;
+}
+.tagline {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5500;
+}
+.intro, .socials, .roadmap {
+    padding: 2rem 1rem;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin: 0.5rem 0;
+}
+a {
+    color: #ff5500;
+    text-decoration: none;
+}
+footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #555;
+}
