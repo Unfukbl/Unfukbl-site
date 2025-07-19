@@ -1,40 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UNFUKBL — The Meme Beyond the Rug</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="images/unfukbl_animated_logo.PNG" alt="UNFUKBL Logo" class="logo" />
+    <h1>🔥 UNFUKBL</h1>
+    <p>The most anti-rug meme ever made. Born from the ashes. Lit by truth. Rug this? You won’t.</p>
+    
+    <div class="links">
+      <a href="https://getunfukbl.com">getunfukbl.com</a>
+      <a href="https://burnunfukbl.com">burnunfukbl.com</a>
+      <a href="https://iwentunfukbl.com">iwentunfukbl.com</a>
+    </div>
 
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    text-align: center;
-}
-header {
-    background-color: #fff;
-    padding: 2rem 1rem;
-}
-.logo {
-    width: 180px;
-    margin-bottom: 1rem;
-}
-.tagline {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ff5500;
-}
-.intro, .socials, .roadmap {
-    padding: 2rem 1rem;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-ul li {
-    margin: 0.5rem 0;
-}
-a {
-    color: #ff5500;
-    text-decoration: none;
-}
-footer {
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    color: #555;
-}
+    <div class="socials">
+      <a href="https://x.com/unfukble" target="_blank">@unfukble</a>
+      <a href="https://instagram.com/theunfukbl" target="_blank">@theunfukbl</a>
+    </div>
+  </div>
+</body>
+</html>
