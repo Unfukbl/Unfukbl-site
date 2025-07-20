@@ -3,16 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFUKBL - We Burn Rugs — Not Trust</title>
-    <meta name="description" content="UNFUKBL - The most anti-rug token in history. You don't just HODL, you forge the fire. Enter the Dark Phase.">
+    <title>UNFUKBL: Anti-Rug Burn Protocol</title>
+    <meta name="description" content="UNFUKBL - We Burn Rugs, Not Trust. The revolutionary anti-rug burn protocol with community-driven governance.">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Mobile-First Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="images/sizzle-logo.png" alt="UNFUKBL" class="nav-logo">
+                <img src="images/sizzle-logo.png" alt="UNFUKBL Logo" class="nav-logo">
                 <span class="nav-text">UNFUKBL</span>
+            </div>
+            <div class="nav-links">
+                <a href="https://getunfukbl.com" target="_blank" class="nav-btn">
+                    <i class="fas fa-coins"></i> Get
+                </a>
+                <a href="https://burnunfukbl.com" target="_blank" class="nav-btn">
+                    <i class="fas fa-fire"></i> Burn
+                </a>
+                <a href="https://iwentunfukbl.com" target="_blank" class="nav-btn">
+                    <i class="fas fa-users"></i> Community
+                </a>
+                <a href="https://wearunfukbl.com" target="_blank" class="nav-btn">
+                    <i class="fas fa-tshirt"></i> Store
+                </a>
+                <!-- Hidden flame icon links -->
+                <a href="#" class="hidden-flame-link" data-secret="burn-mode">
+                    <i class="fas fa-fire-flame-curved"></i>
+                </a>
+                <a href="#" class="hidden-flame-link" data-secret="dark-phase">
+                    <i class="fas fa-fire-flame-simple"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Animated Logo -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <!-- Animated Sizzle Logo -->
+            <div class="logo-container">
+                <img src="images/sizzle-logo.png" alt="UNFUKBL Sizzle Logo" class="sizzle-logo">
+            </div>
+            
+            <!-- Main Tagline -->
+            <h1 class="hero-title">
+                UNFUKBL: Anti‑Rug Burn Protocol
+            </h1>
+            
+            <h2 class="hero-tagline">
+                We Burn Rugs — Not Trust
+            </h2>
+            
+            <!-- Quick Action Buttons -->
+            <div class="hero-actions">
+                <a href="https://getunfukbl.com" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Get Started
+                </a>
+                <a href="#how-it-works" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i> How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Burn Tracker Ticker -->
+    <section class="burn-ticker">
+        <div class="ticker-container">
+            <div class="ticker-content">
+                <div class="ticker-item">
+                    🔥 <strong>LIVE BURNS:</strong> <span id="burnCount">2,847,392</span> tokens destroyed
+                </div>
+                <div class="ticker-item">
+                    ⚡ <strong>ACTIVE PHASE:</strong> Daily Flame
+                </div>
+                <div class="ticker-item">
+                    📈 <strong>RUGS PREVENTED:</strong> <span id="rugsPrevented">156</span> projects saved
+                </div>
+                <div class="ticker-item">
+                    ⏰ <strong>NEXT VOTE:</strong> <span id="nextVote">127</span> days
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase Progress Bar -->
+    <section class="phase-progress">
+        <div class="container">
+            <h3>Burn Protocol Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-step active completed">
+                    <div class="step-icon">🔥</div>
+                    <span>Daily Flame</span>
+                </div>
+                <div class="progress-step active">
+                    <div class="step-icon">⚒️</div>
+                    <span>Community Forge</span>
+                </div>
+                <div class="progress-step">
+                    <div class="step-icon">🌑</div>
+                    <span>Dark Phase</span>
+                </div>
+                <div class="progress-step">
+                    <div class="step-icon">👑</div>
+                    <span>Dev Glory</span>
+                </div>
+                <div class="progress-line">
+                    <div class="progress-fill" style="width: 35%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three simple steps to join the anti-rug revolution</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">💰</div>
+                    <h3>Buy $UNFUKBL</h3>
+                    <p>Purchase $UNFUKBL tokens to automatically trigger burn mechanisms. Every purchase over $100 initiates an instant community burn event.</p>
+                    <a href="https://getunfukbl.com" target="_blank" class="step-link">
+                        Start Burning <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🗳️</div>
+                    <h3>Vote Every 6 Months</h3>
+                    <p>Community governance votes determine burn rates, protocol updates, and phase transitions. Your voice shapes the future of anti-rug protection.</p>
+                    <a href="https://iwentunfukbl.com" target="_blank" class="step-link">
+                        Join Governance <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">🌑</div>
+                    <h3>Enter Dark Phase</h3>
+                    <p>Unlock advanced burn mechanics and exclusive rewards. Only diamond hands survive the transition to ultimate rug protection.</p>
+                    <a href="https://burnunfukbl.com" target="_blank" class="step-link">
+                        Track Progress <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard">
+        <div class="container">
+            <h2 class="section-title">Top Burners Leaderboard</h2>
+            <p class="section-subtitle">Hall of fame for anti-rug warriors</p>
+            
+            <div class="leaderboard-table">
+                <div class="leaderboard-header">
+                    <span>Rank</span>
+                    <span>Burner</span>
+                    <span>Tokens Burned</span>
+                    <span>Rugs Prevented</span>
+                </div>
+                
+                <div class="leaderboard-row rank-1">
+                    <div class="rank">🥇</div>
+                    <div class="burner">BurnMaster.eth</div>
+                    <div class="tokens">1.2M</div>
+                    <div class="rugs">23</div>
+                </div>
+                
+                <div class="leaderboard-row rank-2">
+                    <div class="rank">🥈</div>
+                    <div class="burner">FlameKing</div>
+                    <div class="tokens">847K</div>
+                    <div class="rugs">18</div>
+                </div>
+                
+                <div class="leaderboard-row rank-3">
+                    <div class="rank">🥉</div>
+                    <div class="burner">RugDestroyer</div>
+                    <div class="tokens">692K</div>
+                    <div class="rugs">15</div>
+                </div>
+                
+                <div class="leaderboard-row">
+                    <div class="rank">4</div>
+                    <div class="burner">AntiRugHero</div>
+                    <div class="tokens">534K</div>
+                    <div class="rugs">12</div>
+                </div>
+                
+                <div class="leaderboard-row">
+                    <div class="rank">5</div>
+                    <div class="burner">DarkPhaseWarrior</div>
+                    <div class="tokens">428K</div>
+                    <div class="rugs">10</div>
+                </div>
+            </div>
+            
+            <div class="leaderboard-cta">
+                <a href="https://burnunfukbl.com" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-trophy"></i> View Full Leaderboard
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Social Links -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/sizzle-logo.png" alt="UNFUKBL" class="footer-logo">
+                    <h3>UNFUKBL</h3>
+                    <p>Anti‑Rug Burn Protocol</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Protocol</h4>
+                        <a href="https://getunfukbl.com" target="_blank">Get UNFUKBL</a>
+                        <a href="https://burnunfukbl.com" target="_blank">Burn Tracker</a>
+                        <a href="#how-it-works">How It Works</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Community</h4>
+                        <a href="https://iwentunfukbl.com" target="_blank">Join Community</a>
+                        <a href="https://wearunfukbl.com" target="_blank">Merch Store</a>
+                        <a href="#leaderboard">Leaderboard</a>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>#UNFUKBLVERSE</h4>
+                    <div class="social-links">
+                        <a href="https://x.com/search?q=%23UNFUKBLVERSE" target="_blank" class="social-link" title="X/Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://t.me/UNFUKBLVERSE" target="_blank" class="social-link" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://discord.gg/UNFUKBLVERSE" target="_blank" class="social-link" title="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://instagram.com/explore/tags/UNFUKBLVERSE" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 UNFUKBL Protocol. Burning rugs, building trust.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
