@@ -3,396 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFUKBL - Anti-Rug Burn Protocol | We Burn Rugs — Not Trust</title>
-    <meta name="description" content="UNFUKBL: The legendary anti-rug burn protocol. Join Sizzle's adventures in the UNFUKBLverse where we burn rugs, not trust.">
+    <title>UNFUKBL | Together we CAN'T be stopped! 🔥</title>
+    <meta name="description" content="UNFUKBL - The most legendary meme coin ever created. Sizzle lights the way. Together we CAN'T be stopped!">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Hero Section with SIZZLE Logo -->
-    <section class="hero-section">
+<body data-theme="light">
+    
+    <!-- Hero Section - INSTANT IMPACT -->
+    <section class="hero-legend" id="hero">
+        <!-- Sizzle Logo - The Star -->
+        <div class="sizzle-throne">
+            <img src="images/sizzle-logo.png" alt="SIZZLE" class="legendary-logo" id="sizzle-logo">
+            <div class="legendary-glow"></div>
+            <div class="flame-aura"></div>
+        </div>
+        
+        <!-- The Power Line -->
+        <h1 class="legendary-tagline">Together we CAN'T be stopped! 🔥</h1>
+        
+        <!-- Scroll Hint -->
+        <div class="scroll-hint">
+            <span>Scroll to enter the UNFUKBLverse</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" id="theme-toggle">
+            <div class="toggle-coin">
+                <span class="sun-face">☀️</span>
+                <span class="moon-face">🌙</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation - Appears on Scroll -->
+    <nav class="flame-nav" id="flame-nav">
+        <div class="nav-links">
+            <a href="#portals" class="nav-link">🌀 Portals</a>
+            <a href="#burn" class="nav-link">🔥 Burn</a>
+            <a href="#community" class="nav-link">👥 Community</a>
+            <a href="#wisdom" class="nav-link">✨ Wisdom</a>
+        </div>
+    </nav>
+
+    <!-- Adventure Portals Section -->
+    <section id="portals" class="portals-reveal">
         <div class="container">
-            <div class="hero-content">
-                <!-- Main SIZZLE Logo Centerpiece -->
-                <div class="sizzle-hero">
-                    <img src="images/sizzle-official.png" alt="SIZZLE - UNFUKBL Mascot" class="sizzle-logo" />
+            <h2 class="section-title">🌟 Enter the UNFUKBLverse 🌟</h2>
+            <p class="section-subtitle">Four legendary portals await your discovery</p>
+            
+            <div class="portal-grid">
+                <div class="mega-portal burn-portal" onclick="enterPortal('burn')">
+                    <div class="portal-icon">🔥</div>
+                    <h3>Burn Portal</h3>
+                    <p>burnunfukbl.com</p>
+                    <div class="portal-status active">LIVE</div>
                 </div>
                 
-                <!-- Tagline -->
-                <h1 class="hero-tagline">
-                    We Burn Rugs — Not Trust
-                </h1>
-                
-                <!-- Main Navigation -->
-                <nav class="main-nav">
-                    <div class="nav-container">
-                        <!-- Mobile Menu Toggle -->
-                        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        
-                        <!-- Navigation Menu -->
-                        <div class="nav-menu">
-                            <a href="#get" class="nav-link">Get</a>
-                            <a href="#burn" class="nav-link">Burn</a>
-                            <a href="#community" class="nav-link">Community</a>
-                            <a href="#store" class="nav-link">Store</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </section>
-
-    <!-- Burn Tracker Section -->
-    <section id="burn" class="burn-tracker">
-        <div class="container">
-            <h2 class="section-title">🔥 Live Burn Tracker</h2>
-            <div class="burn-stats">
-                <div class="stat-card">
-                    <div class="stat-value" id="rugs-burned">1,337</div>
-                    <div class="stat-label">Rugs Incinerated</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="trust-saved">$42M</div>
-                    <div class="stat-label">Trust Preserved</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="sizzle-power">9,001</div>
-                    <div class="stat-label">Sizzle Power Level</div>
-                </div>
-            </div>
-            
-            <!-- Interactive Burning System -->
-            <div class="burn-interactive">
-                <h3>Burn a Rug Interactively</h3>
-                <div class="rug-burner">
-                    <div class="rug" id="interactive-rug">🪴</div>
-                    <button class="burn-button legendary-btn" onclick="burnRug()">
-                        <i class="fas fa-fire"></i> IGNITE
-                    </button>
-                </div>
-                <div class="flame-particles" id="flame-particles"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leaderboard Section -->
-    <section class="leaderboard">
-        <div class="container">
-            <h2 class="section-title">🏆 Diamond Hands Leaderboard</h2>
-            <div class="leaderboard-grid">
-                <div class="leader-card rank-1">
-                    <div class="rank">👑 #1</div>
-                    <div class="leader-name">SizzleMaster69</div>
-                    <div class="leader-score">420,000 UNFUKBL</div>
-                </div>
-                <div class="leader-card rank-2">
-                    <div class="rank">🥈 #2</div>
-                    <div class="leader-name">RugBurninator</div>
-                    <div class="leader-score">313,370 UNFUKBL</div>
-                </div>
-                <div class="leader-card rank-3">
-                    <div class="rank">🥉 #3</div>
-                    <div class="leader-name">FlameKeeper</div>
-                    <div class="leader-score">269,420 UNFUKBL</div>
-                </div>
-            </div>
-            
-            <!-- Dynamic Status Bar -->
-            <div class="meme-status-bar">
-                <div class="status-item">
-                    <span class="status-label">Current Vibe:</span>
-                    <span class="status-value" id="current-vibe">Absolutely Unruggable</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Fire Level:</span>
-                    <span class="status-value" id="fire-level">🔥🔥🔥🔥🔥</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-label">Diamond Hands:</span>
-                    <span class="status-value" id="diamond-hands">💎💎💎💎💎</span>
-                </div>
-            </div>
-
-            <!-- Legendary Button Progression System -->
-            <div class="legendary-progression">
-                <h3>🌟 Path to Legendary Status</h3>
-                <button class="legendary-btn stage-1" id="legendary-button" onclick="advanceLegendaryStatus()">
-                    <span class="btn-text">Begin Your Journey</span>
-                    <span class="btn-stage">Stage 1/5</span>
-                </button>
-                <div class="progression-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
-                <div class="legendary-status" id="legendary-status">Novice Flame Keeper</div>
-            </div>
-
-            <!-- Dynamic Rug Sensor -->
-            <div class="rug-sensor">
-                <h3>📡 Live Rug Detection Scanner</h3>
-                <div class="sensor-display">
-                    <div class="sensor-screen">
-                        <div class="scan-line"></div>
-                        <div class="sensor-text" id="sensor-reading">Scanning Solana for rugs...</div>
-                        <div class="threat-level" id="threat-level">🟢 ALL CLEAR</div>
-                    </div>
-                </div>
-                <button class="scan-btn" onclick="performRugScan()">
-                    <i class="fas fa-radar-dish"></i> Deep Scan
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Manifesto Section -->
-    <section class="manifesto">
-        <div class="container">
-            <h2 class="section-title">📜 The UNFUKBL Manifesto</h2>
-            <div class="manifesto-content">
-                <div class="manifesto-text">
-                    <h3>We Are The Flame That Never Dies</h3>
-                    <p>In a world plagued by rug pulls and broken promises, UNFUKBL stands as the eternal flame of trust. Our mascot Sizzle doesn't just burn rugs—he burns the very concept of betrayal in DeFi.</p>
-                    
-                    <h3>The Sizzle Philosophy</h3>
-                    <ul>
-                        <li>🔥 <strong>Transparency Over Opacity:</strong> Every transaction, every burn, every decision is visible.</li>
-                        <li>💎 <strong>Diamond Hands Over Paper Hands:</strong> We build for the long term, not quick profits.</li>
-                        <li>🚀 <strong>Community Over Corporations:</strong> The UNFUKBLverse belongs to every holder.</li>
-                        <li>⚡ <strong>Innovation Over Imitation:</strong> We create the future, others follow.</li>
-                    </ul>
-                    
-                    <h3>The Promise</h3>
-                    <p>When you hold UNFUKBL, you're not just holding a token—you're holding a piece of the revolution. Sizzle's flame burns eternal, protecting your investment from the darkness of deception.</p>
+                <div class="mega-portal wear-portal" onclick="enterPortal('wear')">
+                    <div class="portal-icon">👕</div>
+                    <h3>Wear Portal</h3>
+                    <p>wearunfukbl.com</p>
+                    <div class="portal-status coming">SOON</div>
                 </div>
                 
-                <!-- Advanced Rug Sensor -->
-                <div class="rug-sensor">
-                    <h3>📡 Quantum Rug Detection Matrix</h3>
-                    <div class="sensor-display">
-                        <div class="radar-screen">
-                            <div class="radar-sweep"></div>
-                            <div class="radar-blip" id="radar-blip-1"></div>
-                            <div class="radar-blip" id="radar-blip-2"></div>
-                            <div class="radar-blip" id="radar-blip-3"></div>
-                        </div>
-                        <div class="sensor-status" id="sensor-status">🟢 MONITORING</div>
-                        <div class="sensor-message" id="sensor-message">Scanning quantum dimensions for rug signatures...</div>
-                        <div class="threat-assessment" id="threat-level">⚡ THREAT LEVEL: MINIMAL</div>
-                    </div>
-                    <button class="deep-scan-btn" onclick="performQuantumScan()">
-                        <i class="fas fa-satellite-dish"></i> QUANTUM SCAN
-                    </button>
+                <div class="mega-portal get-portal" onclick="enterPortal('get')">
+                    <div class="portal-icon">💎</div>
+                    <h3>Get Portal</h3>
+                    <p>getunfukbl.com</p>
+                    <div class="portal-status active">LIVE</div>
+                </div>
+                
+                <div class="mega-portal adventure-portal" onclick="enterPortal('adventure')">
+                    <div class="portal-icon">📖</div>
+                    <h3>Adventures of Sizzle</h3>
+                    <p>iwentunfukbl.com</p>
+                    <div class="portal-status community">COMMUNITY</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- UNFUKBLverse Section -->
-    <section class="unfukblverse">
+    <!-- Sacred Burn Section -->
+    <section id="burn" class="burn-reveal">
         <div class="container">
-            <h2 class="section-title">🌌 Welcome to the UNFUKBLverse</h2>
-            <div class="universe-grid">
-                <div class="universe-card">
-                    <h3>🔥 The Flame Dimension</h3>
-                    <p>Where Sizzle originated, a realm of pure anti-rug energy where trust burns brighter than any flame.</p>
-                </div>
-                <div class="universe-card">
-                    <h3>💎 Diamond Hand Galaxy</h3>
-                    <p>Home to the strongest holders, where paper hands are transformed into unbreakable diamond through Sizzle's power.</p>
-                </div>
-                <div class="universe-card">
-                    <h3>🚀 The Moonshot Nebula</h3>
-                    <p>Where price action defies gravity and UNFUKBL holders ascend to legendary status.</p>
-                </div>
-            </div>
+            <h2 class="section-title">🔥 The Sacred Burn Protocol</h2>
+            <p class="burn-philosophy">"From every rug burned, we rise stronger. Sizzle lights the way to justice."</p>
             
-            <!-- Magical Portal Links with Burning Effects -->
-            <div class="portal-links">
-                <h3>🌀 Dimensional Portals</h3>
-                <div class="portals-grid">
-                    <a href="https://burnunfukbl.com" class="portal-link burning-portal" target="_blank" onclick="ignitePortal(this)">
-                        <i class="fas fa-fire"></i>
-                        <span>Burn Portal</span>
-                        <div class="portal-flames"></div>
-                    </a>
-                    <a href="https://getunfukbl.com" class="portal-link rocket-portal" target="_blank" onclick="launchPortal(this)">
-                        <i class="fas fa-rocket"></i>
-                        <span>Acquisition Portal</span>
-                        <div class="portal-rockets"></div>
-                    </a>
-                    <a href="https://iwentunfukbl.com" class="portal-link star-portal" target="_blank" onclick="stellarPortal(this)">
-                        <i class="fas fa-star"></i>
-                        <span>Ascension Portal</span>
-                        <div class="portal-stars"></div>
-                    </a>
-                    <a href="https://wearunfukbl.com" class="portal-link merch-portal" target="_blank" onclick="fashionPortal(this)">
-                        <i class="fas fa-tshirt"></i>
-                        <span>Merchandise Portal</span>
-                        <div class="portal-threads"></div>
-                    </a>
+            <!-- Interactive Rug Destroyer -->
+            <div class="rug-destroyer">
+                <div class="destroy-chamber">
+                    <div class="rug-target" id="rug-target">🪣</div>
+                    <button class="destroy-button" onclick="destroyRug()">OBLITERATE RUG 🔥</button>
                 </div>
-            </div>
-            
-            <!-- Hidden Magic Buttons -->
-            <div class="hidden-magic-zone">
-                <div class="magic-button secret-flame" onclick="unlockSecretFlame()">
-                    <span class="magic-icon">🔥</span>
-                </div>
-                <div class="magic-button secret-diamond" onclick="unlockDiamondVault()">
-                    <span class="magic-icon">💎</span>
-                </div>
-                <div class="magic-button secret-whale" onclick="summonWhaleSpirit()">
-                    <span class="magic-icon">🐋</span>
-                </div>
-                <div class="magic-button secret-moon" onclick="launchToMoon()">
-                    <span class="magic-icon">🚀</span>
-                </div>
-            </div>
-
-            <!-- Sizzle's Wisdom Oracle -->
-            <div class="wisdom-oracle">
-                <h3>🔮 Consult the Sizzle Oracle</h3>
-                <div class="oracle-container">
-                    <div class="oracle-crystal" onclick="getSizzleWisdom()">
-                        <div class="crystal-glow"></div>
-                        <div class="crystal-center">
-                            <i class="fas fa-eye"></i>
-                        </div>
+                <div class="destruction-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="rugs-destroyed">1,337</span>
+                        <span class="stat-label">Rugs Destroyed</span>
                     </div>
-                    <div class="wisdom-display" id="sizzle-wisdom">Click the crystal to receive Sizzle's ancient wisdom...</div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Diamond Hands</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">MAXIMUM</span>
+                        <span class="stat-label">Justice Level</span>
+                    </div>
                 </div>
+                <div class="destruction-message" id="destruction-message"></div>
             </div>
         </div>
     </section>
 
     <!-- Community Section -->
-    <section id="community" class="community">
+    <section id="community" class="community-reveal">
         <div class="container">
-            <h2 class="section-title">🎭 The Adventures of Sizzle</h2>
-            <div class="adventures-content">
-                <div class="adventure-story">
-                    <h3>Chapter 1: The Great Rug Burn of 2024</h3>
-                    <p>In the depths of the Solana ecosystem, when darkness threatened to consume all hope, Sizzle emerged from the Flame Dimension with his legendary sunglasses and an unquenchable thirst for justice.</p>
-                    
-                    <div class="story-highlight">
-                        <p><em>"I don't just burn rugs,"</em> Sizzle declared, adjusting his iconic shades, <em>"I burn the very idea that anyone can take advantage of this community."</em></p>
-                    </div>
-                    
-                    <p>Armed with the UNFUKBL protocol, Sizzle began his mission to protect every holder, every dreamer, every diamond-handed warrior in the UNFUKBLverse.</p>
+            <h2 class="section-title">👥 The UNFUKBL Legion</h2>
+            <p class="community-philosophy">United by fire. Strengthened by conviction. Guided by Sizzle's eternal light.</p>
+            
+            <!-- Core Values -->
+            <div class="values-grid">
+                <div class="value-stone">
+                    <div class="value-icon">🔥</div>
+                    <h3>Burn the Rugs</h3>
+                    <p>Destroy what hurts the community</p>
                 </div>
                 
-                <div class="community-features">
-                    <h3>🔥 Join the Revolution</h3>
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <i class="fab fa-telegram"></i>
-                            <h4>Telegram Army</h4>
-                            <p>Real-time updates, memes, and Sizzle sightings</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fab fa-twitter"></i>
-                            <h4>Twitter Flame</h4>
-                            <p>Follow Sizzle's adventures across the cryptoverse</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fab fa-discord"></i>
-                            <h4>Discord Sanctuary</h4>
-                            <p>Where legends gather and strategies are forged</p>
-                        </div>
-                    </div>
+                <div class="value-stone">
+                    <div class="value-icon">💎</div>
+                    <h3>Diamond Hands</h3>
+                    <p>Together we hold, together we rise</p>
+                </div>
+                
+                <div class="value-stone">
+                    <div class="value-icon">✨</div>
+                    <h3>Sizzle's Light</h3>
+                    <p>Our spiritual guide to victory</p>
+                </div>
+                
+                <div class="value-stone">
+                    <div class="value-icon">🚀</div>
+                    <h3>Un-rugable Future</h3>
+                    <p>From ashes we rise, unbreakable</p>
                 </div>
             </div>
             
-            <!-- Legendary Button System -->
-            <div class="legendary-progression">
-                <h3>🏆 Legendary Status Progression</h3>
-                <button class="legendary-btn" id="legendary-button" onclick="progressLegendary()">
-                    <span id="legendary-text">Begin Journey</span>
-                    <span id="legendary-level">Level 1</span>
-                </button>
-                <div class="progression-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
+            <!-- Social Flames -->
+            <div class="social-flames">
+                <h3>Join Our Eternal Flame</h3>
+                <div class="social-links">
+                    <a href="https://x.com/unfukbl" target="_blank" class="social-flame twitter-flame">
+                        <span class="social-icon">𝕏</span>
+                        <span class="social-handle">@unfukbl</span>
+                    </a>
+                    <a href="https://instagram.com/unfukblverse" target="_blank" class="social-flame instagram-flame">
+                        <span class="social-icon">📸</span>
+                        <span class="social-handle">@unfukblverse</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Store Section -->
-    <section id="store" class="store">
+    <!-- Sacred Wisdom Section -->
+    <section id="wisdom" class="wisdom-reveal">
         <div class="container">
-            <h2 class="section-title">🛒 UNFUKBL Store</h2>
-            <div class="store-grid">
-                <div class="store-item">
-                    <h3>🔥 Sizzle NFT Collection</h3>
-                    <p>Own a piece of Sizzle's legendary adventures. Each NFT tells a story of triumph over rug pulls.</p>
-                    <button class="legendary-btn">Explore Collection</button>
-                </div>
-                <div class="store-item">
-                    <h3>👕 UNFUKBL Merch</h3>
-                    <p>Wear your diamond hands with pride. Premium clothing for the UNFUKBLverse community.</p>
-                    <button class="legendary-btn">Shop Now</button>
-                </div>
-                <div class="store-item">
-                    <h3>🎮 Sizzle Game</h3>
-                    <p>Play as Sizzle in the ultimate rug-burning adventure game. Coming soon to all platforms.</p>
-                    <button class="legendary-btn">Pre-Order</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Get UNFUKBL Section -->
-    <section id="get" class="get-unfukbl">
-        <div class="container">
-            <h2 class="section-title">🚀 Get UNFUKBL</h2>
-            <div class="get-content">
-                <div class="get-info">
-                    <h3>How to Join the Revolution</h3>
-                    <ol>
-                        <li>Connect your Solana wallet</li>
-                        <li>Swap SOL for UNFUKBL</li>
-                        <li>Hold with diamond hands</li>
-                        <li>Watch Sizzle protect your investment</li>
-                    </ol>
-                    <button class="legendary-btn">
-                        <i class="fas fa-rocket"></i> Buy UNFUKBL Now
-                    </button>
-                </div>
-                <div class="tokenomics">
-                    <h3>Tokenomics</h3>
-                    <div class="tokenomics-grid">
-                        <div class="tokenomics-item">
-                            <span class="token-label">Total Supply:</span>
-                            <span class="token-value">1,000,000,000</span>
+            <h2 class="section-title">📜 Sacred UNFUKBL Wisdom</h2>
+            
+            <div class="wisdom-scroll">
+                <div class="wisdom-content">
+                    <h3>🔥 The Eternal Flame</h3>
+                    <p class="sacred-text">
+                        "We are the children of burned rugs, the survivors of pulled carpets, 
+                        the believers in diamond hands. Sizzle lights our way through the darkness 
+                        of deception, guiding us toward an un-rugable future."
+                    </p>
+                    
+                    <div class="sacred-principles">
+                        <div class="principle">
+                            <span class="principle-flame">🔥</span>
+                            <span>Every rug burned makes us stronger</span>
                         </div>
-                        <div class="tokenomics-item">
-                            <span class="token-label">Burned:</span>
-                            <span class="token-value">50% 🔥</span>
+                        <div class="principle">
+                            <span class="principle-flame">💎</span>
+                            <span>Diamond hands hold eternal flames</span>
                         </div>
-                        <div class="tokenomics-item">
-                            <span class="token-label">Liquidity:</span>
-                            <span class="token-value">30% 💧</span>
+                        <div class="principle">
+                            <span class="principle-flame">✨</span>
+                            <span>From ashes we rise, unbreakable</span>
                         </div>
-                        <div class="tokenomics-item">
-                            <span class="token-label">Community:</span>
-                            <span class="token-value">20% 👥</span>
+                        <div class="principle">
+                            <span class="principle-flame">🚀</span>
+                            <span>Together we CAN'T be stopped</span>
                         </div>
+                    </div>
+                    
+                    <div class="wisdom-signature">
+                        <p>~ Blessed by Sizzle's eternal light ~</p>
+                        <p class="sizzle-blessing">✨ The UNFUKBL Community ✨</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="legendary-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-sizzle">
+                    <img src="images/sizzle-logo.png" alt="Sizzle" class="footer-logo">
+                </div>
+                
+                <div class="footer-links">
+                    <a href="https://x.com/unfukbl" target="_blank">@unfukbl</a>
+                    <a href="https://instagram.com/unfukblverse" target="_blank">@unfukblverse</a>
+                    <span>•</span>
+                    <a href="#portals" onclick="enterPortal('burn')">burnunfukbl.com</a>
+                    <a href="#portals" onclick="enterPortal('get')">getunfukbl.com</a>
+                </div>
+                
+                <div class="rug-memorial">
+                    <p><span id="memorial-count">1,337</span> rugs were harmed in the making of this website 🔥</p>
+                    <p class="no-regrets">No regrets. Sizzle approved. Diamond hands forever.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
