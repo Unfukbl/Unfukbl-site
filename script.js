@@ -161,6 +161,7 @@ function advanceLegendaryStatus() {
         createCelebrationParticles();
     }
 }
+
 // ========= RUG SENSOR SYSTEM =========
 function initializeRugSensor() {
     // Start radar animation
@@ -406,6 +407,7 @@ function getSizzleWisdom() {
         crystal.style.animation = 'crystalGlow 0.5s ease-in-out 3';
     }
 }
+
 // ========= PARTICLE EFFECT SYSTEMS =========
 function createFlameExplosion() {
     createParticles(30, ['#ff4500', '#ff6600', '#ff8c00', '#ffd700'], 'flameRise');
