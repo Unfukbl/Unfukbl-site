@@ -161,3 +161,248 @@ function advanceLegendaryStatus() {
         createCelebrationParticles();
     }
 }
+// ========= RUG SENSOR SYSTEM =========
+function initializeRugSensor() {
+    // Start radar animation
+    const radarBlips = document.querySelectorAll('.radar-blip');
+    radarBlips.forEach((blip, index) => {
+        blip.style.animation = `radarBlip 2s ease-in-out infinite`;
+        blip.style.animationDelay = `${index * 0.7}s`;
+    });
+    
+    console.log('📡 Dynamic rug sensor initialized!');
+}
+
+function performRugScan() {
+    const sensorReading = document.getElementById('sensor-reading');
+    const threatLevel = document.getElementById('threat-level');
+    const scanBtn = document.querySelector('.scan-btn');
+    
+    if (!sensorReading || !threatLevel || !scanBtn) return;
+    
+    gameState.scanCount++;
+    
+    const scanMessages = [
+        'Scanning Solana blockchain...',
+        'Detecting liquidity pools...',
+        'Analyzing smart contracts...',
+        'Checking for rug signatures...',
+        'Quantum entanglement scan...',
+        'Sizzle protection verified...',
+        'Multi-dimensional sweep...',
+        'Trust verification complete...',
+        'Diamond hand detection...',
+        'Whale behavior analysis...',
+        'Meme power calibration...',
+        'UNFUKBL immunity confirmed...',
+        'Legendary status verified...',
+        'Flame barrier activated...',
+        'All systems nominal...',
+        'Rug-proof certification achieved!'
+    ];
+    
+    // Disable button temporarily
+    scanBtn.disabled = true;
+    scanBtn.style.opacity = '0.6';
+    
+    // Show scanning animation
+    let messageIndex = 0;
+    const scanInterval = setInterval(() => {
+        sensorReading.textContent = scanMessages[messageIndex % scanMessages.length];
+        messageIndex++;
+    }, 200);
+    
+    // Complete scan after 3 seconds
+    setTimeout(() => {
+        clearInterval(scanInterval);
+        
+        const finalMessage = scanMessages[Math.floor(Math.random() * scanMessages.length)];
+        sensorReading.textContent = finalMessage;
+        
+        const threatLevels = [
+            '🟢 ALL CLEAR - UNFUKBL ZONE',
+            '🟢 SIZZLE PROTECTION ACTIVE',
+            '🟢 RUG IMMUNITY: 100%',
+            '🟢 DIAMOND HANDS DETECTED'
+        ];
+        
+        threatLevel.textContent = threatLevels[Math.floor(Math.random() * threatLevels.length)];
+        
+        // Re-enable button
+        scanBtn.disabled = false;
+        scanBtn.style.opacity = '1';
+        
+        // Create scan particles
+        createScanParticles();
+        
+    }, 3000);
+}
+
+function performQuantumScan() {
+    const sensorStatus = document.getElementById('sensor-status');
+    const sensorMessage = document.getElementById('sensor-message');
+    const threatAssessment = document.getElementById('threat-level');
+    
+    if (!sensorStatus || !sensorMessage || !threatAssessment) return;
+    
+    const quantumMessages = [
+        'Initializing quantum field generators...',
+        'Scanning parallel dimensions for rugs...',
+        'Detecting temporal rug anomalies...',
+        'Quantum entanglement with Sizzle core...',
+        'Multi-verse rug threat assessment...',
+        'Probability wave collapse analysis...',
+        'Quantum tunnel scan complete...',
+        'Reality distortion field stable...'
+    ];
+    
+    sensorStatus.textContent = '🔴 QUANTUM SCANNING';
+    
+    let msgIndex = 0;
+    const quantumInterval = setInterval(() => {
+        sensorMessage.textContent = quantumMessages[msgIndex % quantumMessages.length];
+        msgIndex++;
+    }, 400);
+    
+    setTimeout(() => {
+        clearInterval(quantumInterval);
+        sensorStatus.textContent = '🟢 QUANTUM SCAN COMPLETE';
+        sensorMessage.textContent = 'Quantum dimensions verified - No rugs detected across all realities';
+        threatAssessment.textContent = '⚡ QUANTUM SECURED';
+        
+        createQuantumParticles();
+    }, 4000);
+}
+
+// ========= THEME TOGGLE SYSTEM =========
+function initializeThemeToggle() {
+    // Initialize theme from localStorage or default to light
+    const savedTheme = localStorage.getItem('unfukbl-theme') || 'light';
+    document.body.setAttribute('data-theme', savedTheme);
+    
+    console.log(`🌓 Theme toggle initialized - Current theme: ${savedTheme.toUpperCase()}`);
+}
+
+// ========= INTERACTIVE BURNING SYSTEM =========
+function initializeInteractiveBurning() {
+    console.log('🔥 Interactive burning rugs initialized!');
+}
+
+function burnRug() {
+    const rug = document.getElementById('interactive-rug');
+    const rugsBurnedElement = document.getElementById('rugs-burned');
+    
+    if (!rug || !rugsBurnedElement) return;
+    
+    // Create massive flame explosion
+    createFlameExplosion();
+    
+    // Update counter
+    gameState.rugsBurned += Math.floor(Math.random() * 10) + 1;
+    rugsBurnedElement.textContent = gameState.rugsBurned.toLocaleString();
+    
+    // Animate rug burning
+    rug.style.transform = 'scale(0) rotate(360deg)';
+    rug.style.opacity = '0';
+    
+    // Reset rug after animation
+    setTimeout(() => {
+        rug.style.transform = 'scale(1) rotate(0deg)';
+        rug.style.opacity = '1';
+        rug.textContent = getRandomRug();
+    }, 800);
+    
+    // Update Sizzle power
+    const sizzlePower = document.getElementById('sizzle-power');
+    if (sizzlePower) {
+        gameState.sizzlePower += Math.floor(Math.random() * 500) + 100;
+        sizzlePower.textContent = gameState.sizzlePower.toLocaleString();
+    }
+    
+    // Update trust saved
+    const trustSaved = document.getElementById('trust-saved');
+    if (trustSaved) {
+        gameState.trustSaved += Math.floor(Math.random() * 100000) + 10000;
+        trustSaved.textContent = '$' + (gameState.trustSaved / 1000000).toFixed(1) + 'M';
+    }
+}
+
+// ========= PORTAL ACTIVATION SYSTEMS =========
+function ignitePortal(element) {
+    createFlamePortalEffect(element);
+    element.style.animation = 'flameFlicker 0.5s ease-in-out 3';
+}
+
+function launchPortal(element) {
+    createRocketPortalEffect(element);
+    element.style.animation = 'rocketLaunch 1s ease-out';
+}
+
+function stellarPortal(element) {
+    createStarPortalEffect(element);
+    element.style.animation = 'stellarTwinkle 1s ease-in-out 2';
+}
+
+function fashionPortal(element) {
+    createFashionPortalEffect(element);
+    element.style.animation = 'fashionSpin 0.8s ease-in-out';
+}
+
+// ========= HIDDEN MAGIC BUTTON FUNCTIONS =========
+function unlockSecretFlame() {
+    showFloatingMessage('🔥 SECRET FLAME UNLOCKED! 🔥');
+    createMegaFlameEffect();
+}
+
+function unlockDiamondVault() {
+    showFloatingMessage('💎 DIAMOND VAULT OPENED! 💎');
+    createDiamondRainEffect();
+}
+
+function summonWhaleSpirit() {
+    showFloatingMessage('🐋 WHALE SPIRIT SUMMONED! 🐋');
+    createWhaleEffect();
+}
+
+function launchToMoon() {
+    showFloatingMessage('🚀 MOON MISSION INITIATED! 🚀');
+    createMoonLaunchEffect();
+}
+
+// ========= SIZZLE ORACLE WISDOM SYSTEM =========
+function getSizzleWisdom() {
+    const wisdomDisplay = document.getElementById('sizzle-wisdom');
+    if (!wisdomDisplay) return;
+    
+    gameState.wisdomCount++;
+    
+    const wisdoms = [
+        "The flame that burns brightest burns eternal. Trust in the UNFUKBL way.",
+        "When rugs threaten, Sizzle protects. When fear approaches, diamond hands prevail.",
+        "In the UNFUKBLverse, every holder is a guardian of trust.",
+        "The sunglasses see all, the flame burns true, the protocol endures forever.",
+        "Not all heroes wear capes. Some wear sunglasses and breathe fire.",
+        "A rug pulled is a lesson learned. A rug burned is justice served.",
+        "The path to legendary status is paved with diamond hands and flame hearts.",
+        "When the market bleeds, UNFUKBL feeds. When others fall, we rise.",
+        "Sizzle's wisdom: HODLing is not just about price—it's about principle.",
+        "In the chaos of crypto, be the eye of the storm. Be UNFUKBL.",
+        "The greatest rug pull protection is not smart contracts—it's smart community.",
+        "Every flame tells a story. Every burn writes history.",
+        "Trust is the rarest cryptocurrency. UNFUKBL is its blockchain.",
+        "The sunglasses aren't just for style—they help me see through all the BS.",
+        "When you're UNFUKBL, the only direction is up. And sometimes sideways. But never down."
+    ];
+    
+    const wisdom = wisdoms[Math.floor(Math.random() * wisdoms.length)];
+    wisdomDisplay.textContent = `"${wisdom}"`;
+    
+    // Add mystical effects
+    createMysticalParticles();
+    
+    // Change crystal glow
+    const crystal = document.querySelector('.oracle-crystal');
+    if (crystal) {
+        crystal.style.animation = 'crystalGlow 0.5s ease-in-out 3';
+    }
+}
