@@ -1,631 +1,443 @@
-// UNFUKBL - Interactive JavaScript for the Legendary Meme Coin Experience
+// 🔥 UNFUKBL - LEGENDARY MEME MAGIC JS 🔥
+// Clean • Crisp • Sharp • Original
 
-console.log('🔥 UNFUKBL Protocol loaded successfully! Anti-rug protection active.');
+document.addEventListener('DOMContentLoaded', function() {
+    initThemeMagic();
+    initScrollReveal();
+    initLegendaryInteractions();
+    initCounters();
+    
+    console.log('🔥 UNFUKBL Universe Activated! Sizzle lights the way!');
+});
 
-// Performance timing
-const startTime = performance.now();
-
-// Mobile Navigation
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+// THEME MAGIC SYSTEM
+function initThemeMagic() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('unfukbl-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        // Animate hamburger menu
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        spans.forEach((span, index) => {
-            if (navMenu.classList.contains('active')) {
-                if (index === 0) span.style.transform = 'rotate(45deg) translate(6px, 6px)';
-                if (index === 1) span.style.opacity = '0';
-                if (index === 2) span.style.transform = 'rotate(-45deg) translate(6px, -6px)';
-            } else {
-                span.style.transform = 'none';
-                span.style.opacity = '1';
-            }
-        });
-    });
-
-    // Close mobile menu when clicking on nav links
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            spans.forEach(span => {
-                span.style.transform = 'none';
-                span.style.opacity = '1';
-            });
-        });
+        // Create epic theme transition
+        createThemeExplosion();
+        
+        setTimeout(() => {
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('unfukbl-theme', newTheme);
+        }, 400);
     });
 }
 
-// Interactive Rug Burning System
-let rugsBurned = 1337;
+// EPIC THEME EXPLOSION
+function createThemeExplosion() {
+    const explosion = document.createElement('div');
+    explosion.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, #ff6600, #ff8c00, #ffa500);
+        z-index: 9999;
+        pointer-events: none;
+        opacity: 0;
+    `;
+    
+    document.body.appendChild(explosion);
+    
+    explosion.animate([
+        { opacity: 0, transform: 'scale(0)' },
+        { opacity: 0.9, transform: 'scale(2)' },
+        { opacity: 0, transform: 'scale(4)' }
+    ], {
+        duration: 800,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+    }).onfinish = () => explosion.remove();
+}
 
-function burnRug() {
-    const rug = document.getElementById('interactive-rug');
-    const rugsBurnedElement = document.getElementById('rugs-burned');
+// SCROLL REVEAL MAGIC
+function initScrollReveal() {
+    const nav = document.getElementById('flame-nav');
+    const sections = document.querySelectorAll('.portals-reveal, .burn-reveal, .community-reveal, .wisdom-reveal');
     
-    if (!rug || !rugsBurnedElement) return;
+    const revealOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.1 });
     
-    // Add burning animation
-    rug.classList.add('burning');
+    sections.forEach(section => {
+        revealOnScroll.observe(section);
+    });
     
-    // Create flame particles
-    createFlameParticles();
+    // Navigation appears on scroll
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 200) {
+            nav.classList.add('visible');
+        } else {
+            nav.classList.remove('visible');
+        }
+        
+        lastScrollY = currentScrollY;
+    });
+}
+
+// LEGENDARY INTERACTIONS
+function initLegendaryInteractions() {
+    const sizzleLogo = document.getElementById('sizzle-logo');
+    
+    if (sizzleLogo) {
+        let clickCount = 0;
+        sizzleLogo.addEventListener('click', function() {
+            clickCount++;
+            createSizzleExplosion(this);
+            
+            // Every 7 clicks shows wisdom
+            if (clickCount % 7 === 0) {
+                showSizzleWisdom();
+            }
+        });
+    }
+}
+
+// SIZZLE EXPLOSION EFFECT
+function createSizzleExplosion(element) {
+    const particles = ['🔥', '✨', '💎', '⚡', '🌟'];
+    const rect = element.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+        particle.className = 'explosion-particle';
+        
+        particle.style.cssText = `
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 9999;
+            left: ${centerX}px;
+            top: ${centerY}px;
+        `;
+        
+        document.body.appendChild(particle);
+        
+        // Animate particle explosion
+        const angle = (i / 12) * Math.PI * 2;
+        const distance = 120 + Math.random() * 80;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+        
+        particle.animate([
+            { 
+                transform: 'translate(-50%, -50%) scale(1)', 
+                opacity: 1 
+            },
+            { 
+                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0.3)`, 
+                opacity: 0 
+            }
+        ], {
+            duration: 1200,
+            easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+        }).onfinish = () => particle.remove();
+    }
+}
+
+// SIZZLE WISDOM POPUP
+function showSizzleWisdom() {
+    const wisdomQuotes = [
+        "From ashes we rise, unbreakable and strong",
+        "Every rug burned makes us legendary",
+        "Diamond hands hold eternal flames",
+        "Together we CAN'T be stopped",
+        "Sizzle lights the way through darkness",
+        "The UNFUKBL spirit burns eternal"
+    ];
+    
+    const randomWisdom = wisdomQuotes[Math.floor(Math.random() * wisdomQuotes.length)];
+    
+    const wisdomPopup = document.createElement('div');
+    wisdomPopup.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ff6600, #ff8c00);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            font-family: 'Orbitron', monospace;
+            text-align: center;
+            z-index: 10000;
+            border: 4px solid #ffd700;
+            max-width: 450px;
+            box-shadow: 0 25px 60px rgba(255, 102, 0, 0.6);
+        ">
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">✨ Sizzle's Wisdom ✨</h3>
+            <p style="font-size: 1.2rem; margin: 25px 0; font-style: italic; line-height: 1.6;">"${randomWisdom}"</p>
+            <button onclick="this.parentElement.parentElement.remove()" style="
+                background: #ffd700;
+                color: #1a1a1a;
+                border: none;
+                padding: 12px 25px;
+                border-radius: 25px;
+                font-weight: 900;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Accept Wisdom</button>
+        </div>
+    `;
+    
+    document.body.appendChild(wisdomPopup);
+    
+    // Auto-remove after 6 seconds
+    setTimeout(() => {
+        if (wisdomPopup.parentNode) {
+            wisdomPopup.remove();
+        }
+    }, 6000);
+}
+
+// RUG DESTROYER FUNCTION
+function destroyRug() {
+    const rugTarget = document.getElementById('rug-target');
+    const destructionMessage = document.getElementById('destruction-message');
+    const rugsDestroyed = document.getElementById('rugs-destroyed');
+    
+    if (!rugTarget) return;
+    
+    // Add burning effect
+    rugTarget.classList.add('burning');
+    
+    // Create destruction particles
+    createDestructionParticles(rugTarget);
     
     // Update counter
-    rugsBurned++;
-    rugsBurnedElement.textContent = rugsBurned.toLocaleString();
+    const currentCount = parseInt(rugsDestroyed.textContent.replace(/,/g, '')) || 1337;
+    const newCount = currentCount + Math.floor(Math.random() * 3) + 1;
+    rugsDestroyed.textContent = newCount.toLocaleString();
     
-    // Reset rug after animation
+    // Show destruction message
+    const messages = [
+        "🔥 Another rug meets its fiery doom!",
+        "💥 The flames of justice burn bright!",
+        "⚡ UNFUKBL claims another victory!",
+        "💎 Diamond hands prevail once again!",
+        "✨ The sacrifice pleases Sizzle!",
+        "🚀 Un-rugable power activated!",
+        "⚖️ Justice has been served!"
+    ];
+    
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    if (destructionMessage) {
+        destructionMessage.textContent = randomMessage;
+        setTimeout(() => {
+            destructionMessage.textContent = '';
+        }, 3500);
+    }
+    
+    // Change rug after destruction
     setTimeout(() => {
-        rug.classList.remove('burning');
-        rug.textContent = getRandomRug();
-    }, 500);
-    
-    // Update Sizzle power
-    const sizzlePower = document.getElementById('sizzle-power');
-    if (sizzlePower) {
-        const currentPower = parseInt(sizzlePower.textContent.replace(/,/g, ''));
-        sizzlePower.textContent = (currentPower + Math.floor(Math.random() * 100) + 1).toLocaleString();
-    }
+        rugTarget.classList.remove('burning');
+        const rugTypes = ['🪣', '🗑️', '📄', '💸', '🧽', '🪴', '📦', '🎭'];
+        rugTarget.textContent = rugTypes[Math.floor(Math.random() * rugTypes.length)];
+    }, 600);
 }
 
-// Random rug generator
-function getRandomRug() {
-    const rugs = ['🪴', '🧽', '🪣', '🗑️', '📄', '💸', '🎭', '🃏'];
-    return rugs[Math.floor(Math.random() * rugs.length)];
-}
-
-// Flame Particles System
-function createFlameParticles() {
-    const particlesContainer = document.getElementById('flame-particles');
-    if (!particlesContainer) return;
+// DESTRUCTION PARTICLES
+function createDestructionParticles(target) {
+    const rect = target.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
     
     for (let i = 0; i < 20; i++) {
         const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 2 + 's';
-        particle.style.backgroundColor = getRandomFlameColor();
-        
-        particlesContainer.appendChild(particle);
-        
-        // Remove particle after animation
-        setTimeout(() => {
-            if (particle.parentNode) {
-                particle.parentNode.removeChild(particle);
-            }
-        }, 2000);
-    }
-}
-
-// Random flame color generator
-function getRandomFlameColor() {
-    const colors = ['#ff6600', '#ff8800', '#ffaa00', '#ff4400', '#ffd700'];
-    return colors[Math.floor(Math.random() * colors.length)];
-}
-
-// Legendary Button Progression System
-let legendaryLevel = 1;
-let legendaryProgress = 0;
-const maxLevel = 5;
-
-const legendaryStages = [
-    { text: "Begin Journey", level: "Level 1" },
-    { text: "Rug Apprentice", level: "Level 2" },
-    { text: "Flame Guardian", level: "Level 3" },
-    { text: "Diamond Warrior", level: "Level 4" },
-    { text: "Sizzle Legend", level: "Level 5" },
-    { text: "Ascended Being", level: "MAX" }
-];
-
-function advanceLegendaryStatus() {
-    const button = document.getElementById('legendary-button');
-    const progressFill = document.getElementById('progress-fill');
-    const statusElement = document.getElementById('legendary-status');
-    
-    if (!button || !progressFill) return;
-    
-    if (legendaryLevel < maxLevel) {
-        legendaryProgress += 20;
-        
-        if (legendaryProgress >= 100) {
-            legendaryLevel++;
-            legendaryProgress = 0;
-            
-            // Update button text and stage
-            const stage = legendaryStages[legendaryLevel - 1];
-            const btnText = button.querySelector('.btn-text');
-            const btnStage = button.querySelector('.btn-stage');
-            
-            if (btnText) btnText.textContent = stage.text;
-            if (btnStage) btnStage.textContent = `Stage ${legendaryLevel}/5`;
-            if (statusElement) statusElement.textContent = stage.text;
-            
-            // Create celebration effect
-            createCelebrationEffect();
-            
-            // Update button class
-            button.className = `legendary-btn stage-${legendaryLevel}`;
-            
-            // Special effect for max level
-            if (legendaryLevel === maxLevel) {
-                button.style.background = 'linear-gradient(45deg, #ffd700, #ff6600, #ff3333)';
-                button.style.animation = 'legendaryPulse 2s infinite';
-                progressFill.style.background = 'linear-gradient(90deg, #ffd700, #ff3333)';
-            }
-        }
-        
-        // Update progress bar
-        progressFill.style.width = legendaryProgress + '%';
-    } else if (legendaryLevel === maxLevel && legendaryProgress < 100) {
-        // Final ascension
-        legendaryProgress = 100;
-        legendaryLevel++;
-        
-        const finalStage = legendaryStages[legendaryStages.length - 1];
-        const btnText = button.querySelector('.btn-text');
-        const btnStage = button.querySelector('.btn-stage');
-        
-        if (btnText) btnText.textContent = finalStage.text;
-        if (btnStage) btnStage.textContent = finalStage.level;
-        if (statusElement) statusElement.textContent = finalStage.text;
-        
-        progressFill.style.width = '100%';
-        button.style.background = 'linear-gradient(45deg, #ffd700, #ffffff, #ffd700)';
-        button.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.8)';
-        
-        createAscensionEffect();
-    }
-}
-
-// Alternative function name for compatibility
-function progressLegendary() {
-    advanceLegendaryStatus();
-}
-
-// Celebration effect for level ups
-function createCelebrationEffect() {
-    const colors = ['#ffd700', '#ff6600', '#ff3333', '#00ff00'];
-    
-    for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.style.position = 'fixed';
-        particle.style.width = '8px';
-        particle.style.height = '8px';
-        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.borderRadius = '50%';
-        particle.style.pointerEvents = 'none';
-        particle.style.zIndex = '9999';
-        particle.style.left = '50%';
-        particle.style.top = '50%';
+        particle.className = 'explosion-particle';
+        particle.style.cssText = `
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #ff6600;
+            border-radius: 50%;
+            left: ${centerX}px;
+            top: ${centerY}px;
+            z-index: 9999;
+            pointer-events: none;
+        `;
         
         document.body.appendChild(particle);
         
-        const angle = (i / 50) * 2 * Math.PI;
-        const distance = 150 + Math.random() * 100;
-        
-        particle.animate([
-            { 
-                transform: 'translate(-50%, -50%) scale(1)',
-                opacity: 1
-            },
-            { 
-                transform: `translate(${Math.cos(angle) * distance - 50}%, ${Math.sin(angle) * distance - 50}%) scale(0)`,
-                opacity: 0
-            }
-        ], {
-            duration: 1000,
-            easing: 'ease-out'
-        }).onfinish = () => {
-            if (document.body.contains(particle)) {
-                document.body.removeChild(particle);
-            }
-        };
-    }
-}
-
-// Final ascension effect
-function createAscensionEffect() {
-    // Screen flash
-    const flash = document.createElement('div');
-    flash.style.position = 'fixed';
-    flash.style.top = '0';
-    flash.style.left = '0';
-    flash.style.width = '100vw';
-    flash.style.height = '100vh';
-    flash.style.background = 'radial-gradient(circle, rgba(255,215,0,0.5), transparent)';
-    flash.style.pointerEvents = 'none';
-    flash.style.zIndex = '10000';
-    
-    document.body.appendChild(flash);
-    
-    flash.animate([
-        { opacity: 0 },
-        { opacity: 1 },
-        { opacity: 0 }
-    ], {
-        duration: 1500,
-        easing: 'ease-in-out'
-    }).onfinish = () => {
-        document.body.removeChild(flash);
-    };
-    
-    // Golden particles
-    for (let i = 0; i < 100; i++) {
-        setTimeout(() => {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.width = '4px';
-            particle.style.height = '20px';
-            particle.style.background = 'linear-gradient(to bottom, #ffd700, transparent)';
-            particle.style.pointerEvents = 'none';
-            particle.style.zIndex = '9999';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.top = '-20px';
-            
-            document.body.appendChild(particle);
-            
-            particle.animate([
-                { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-                { transform: 'translateY(100vh) rotate(360deg)', opacity: 0 }
-            ], {
-                duration: 3000 + Math.random() * 2000,
-                easing: 'linear'
-            }).onfinish = () => {
-                if (document.body.contains(particle)) {
-                    document.body.removeChild(particle);
-                }
-            };
-        }, i * 50);
-    }
-}
-
-// Dynamic Meme Status System
-const vibes = [
-    "Absolutely Unruggable", "Maximum Overdrive", "Peak Performance", 
-    "Legendary Status", "God Mode Active", "Unstoppable Force",
-    "Diamond Hand Energy", "Moonbound Trajectory", "Infinite Power"
-];
-
-const fireEmojis = ["🔥", "💥", "⚡", "✨", "🌟"];
-const diamondEmojis = ["💎", "💍", "👑", "🏆", "⭐"];
-
-function updateMemeStatus() {
-    const vibeElement = document.getElementById('current-vibe');
-    const fireElement = document.getElementById('fire-level');
-    const diamondElement = document.getElementById('diamond-hands');
-    
-    if (vibeElement) {
-        const randomVibe = vibes[Math.floor(Math.random() * vibes.length)];
-        vibeElement.textContent = randomVibe;
-    }
-    
-    if (fireElement) {
-        const fireCount = Math.floor(Math.random() * 5) + 3;
-        const fireEmoji = fireEmojis[Math.floor(Math.random() * fireEmojis.length)];
-        fireElement.textContent = fireEmoji.repeat(fireCount);
-    }
-    
-    if (diamondElement) {
-        const diamondCount = Math.floor(Math.random() * 5) + 3;
-        const diamondEmoji = diamondEmojis[Math.floor(Math.random() * diamondEmojis.length)];
-        diamondElement.textContent = diamondEmoji.repeat(diamondCount);
-    }
-}
-
-// Dynamic Rug Sensor
-const sensorMessages = [
-    "All systems nominal. No rugs detected in vicinity.",
-    "Scanning blockchain for suspicious activity...",
-    "Minor rug attempt detected and neutralized by Sizzle.",
-    "Diamond hand energy at maximum levels.",
-    "Trust levels: MAXIMUM. Rug probability: ZERO.",
-    "Sizzle's flame burns brighter than ever.",
-    "Anti-rug protocols fully operational.",
-    "Community shield at 100% effectiveness.",
-    "No paper hands detected in the area.",
-    "Legendary status confirmed across all metrics.",
-    "Rug pull immunity: ACTIVE and PERMANENT.",
-    "Sizzle approves this transmission.",
-    "All holders protected under the flame's watch.",
-    "Trust preserved. Mission accomplished.",
-    "The UNFUKBLverse remains secure.",
-    "Scanning complete. You are safe to HODL."
-];
-
-function performRugScan() {
-    updateRugSensor();
-    // Add visual feedback
-    const scanBtn = document.querySelector('.scan-btn');
-    if (scanBtn) {
-        scanBtn.style.background = 'linear-gradient(45deg, #00ff00, #00cc00)';
-        scanBtn.textContent = '🔄 SCANNING...';
-        
-        setTimeout(() => {
-            scanBtn.style.background = '';
-            scanBtn.innerHTML = '<i class="fas fa-radar-dish"></i> Deep Scan';
-        }, 2000);
-    }
-}
-
-function performQuantumScan() {
-    updateRugSensor();
-    // Enhanced quantum scan effect
-    const quantumBtn = document.querySelector('.deep-scan-btn');
-    if (quantumBtn) {
-        quantumBtn.style.background = 'linear-gradient(45deg, #ff00ff, #8a2be2)';
-        quantumBtn.textContent = '⚡ QUANTUM SCANNING...';
-        
-        setTimeout(() => {
-            quantumBtn.style.background = '';
-            quantumBtn.innerHTML = '<i class="fas fa-satellite-dish"></i> QUANTUM SCAN';
-        }, 3000);
-    }
-}
-
-function updateRugSensor() {
-    const sensorMessage = document.getElementById('sensor-message');
-    const sensorReading = document.getElementById('sensor-reading');
-    
-    if (sensorMessage || sensorReading) {
-        const randomMessage = sensorMessages[Math.floor(Math.random() * sensorMessages.length)];
-        const targetElement = sensorMessage || sensorReading;
-        
-        // Typing effect
-        targetElement.textContent = "";
-        let i = 0;
-        const typeInterval = setInterval(() => {
-            if (i < randomMessage.length) {
-                targetElement.textContent += randomMessage.charAt(i);
-                i++;
-            } else {
-                clearInterval(typeInterval);
-            }
-        }, 50);
-    }
-}
-
-// Hidden Magic Button Functions
-function unlockSecretFlame() {
-    createMagicEffect('🔥', '#ff6600');
-    showMagicMessage("Sizzle's Secret Flame Unleashed! 🔥");
-}
-
-function unlockDiamondVault() {
-    createMagicEffect('💎', '#00ffff');
-    showMagicMessage("Diamond Vault Opened! Your hands are now unbreakable! 💎");
-}
-
-function summonWhaleSpirit() {
-    createMagicEffect('🐋', '#0066ff');
-    showMagicMessage("Ancient Whale Spirit Summoned! Massive gains incoming! 🐋");
-}
-
-function launchToMoon() {
-    createMagicEffect('🚀', '#ffff00');
-    showMagicMessage("Rocket fuel activated! Next stop: The Moon! 🚀");
-}
-
-function createMagicEffect(emoji, color) {
-    for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.textContent = emoji;
-        particle.style.position = 'fixed';
-        particle.style.fontSize = '20px';
-        particle.style.pointerEvents = 'none';
-        particle.style.zIndex = '9999';
-        particle.style.left = '50%';
-        particle.style.top = '50%';
-        
-        document.body.appendChild(particle);
-        
-        const angle = (i / 30) * 2 * Math.PI;
-        const distance = 100 + Math.random() * 200;
-        
-        particle.animate([
-            { 
-                transform: 'translate(-50%, -50%) scale(1)',
-                opacity: 1
-            },
-            { 
-                transform: `translate(${Math.cos(angle) * distance - 50}%, ${Math.sin(angle) * distance - 50}%) scale(2)`,
-                opacity: 0
-            }
-        ], {
-            duration: 2000,
-            easing: 'ease-out'
-        }).onfinish = () => {
-            if (document.body.contains(particle)) {
-                document.body.removeChild(particle);
-            }
-        };
-    }
-}
-
-function showMagicMessage(message) {
-    const messageDiv = document.createElement('div');
-    messageDiv.textContent = message;
-    messageDiv.style.position = 'fixed';
-    messageDiv.style.top = '20%';
-    messageDiv.style.left = '50%';
-    messageDiv.style.transform = 'translateX(-50%)';
-    messageDiv.style.background = 'rgba(0, 0, 0, 0.8)';
-    messageDiv.style.color = '#ffd700';
-    messageDiv.style.padding = '20px 40px';
-    messageDiv.style.borderRadius = '15px';
-    messageDiv.style.fontSize = '24px';
-    messageDiv.style.fontWeight = 'bold';
-    messageDiv.style.zIndex = '10000';
-    messageDiv.style.textAlign = 'center';
-    messageDiv.style.border = '2px solid #ffd700';
-    
-    document.body.appendChild(messageDiv);
-    
-    messageDiv.animate([
-        { opacity: 0, transform: 'translateX(-50%) scale(0)' },
-        { opacity: 1, transform: 'translateX(-50%) scale(1)' },
-        { opacity: 1, transform: 'translateX(-50%) scale(1)' },
-        { opacity: 0, transform: 'translateX(-50%) scale(0)' }
-    ], {
-        duration: 3000,
-        easing: 'ease-in-out'
-    }).onfinish = () => {
-        document.body.removeChild(messageDiv);
-    };
-}
-
-// Sizzle's Wisdom Oracle
-const sizzleWisdom = [
-    "Trust is the ultimate currency, and I am its guardian.",
-    "Every rug pulled brings us closer to unbreakable bonds.",
-    "Diamond hands are forged in the flames of conviction.",
-    "The path to the moon is paved with burned rugs.",
-    "Fear not the volatility, for I watch over your portfolio.",
-    "In the UNFUKBLverse, loyalty is rewarded with abundance.",
-    "Paper hands crumble, but diamond hands shine eternal.",
-    "The greatest investments are in communities that care.",
-    "Burn the rugs, not the bridges to prosperity.",
-    "Where there's Sizzle, there's no room for betrayal."
-];
-
-function getSizzleWisdom() {
-    const wisdomDisplay = document.getElementById('sizzle-wisdom');
-    if (!wisdomDisplay) return;
-    
-    const randomWisdom = sizzleWisdom[Math.floor(Math.random() * sizzleWisdom.length)];
-    
-    // Crystal glow effect
-    const crystal = document.querySelector('.oracle-crystal');
-    if (crystal) {
-        crystal.style.animation = 'crystalGlow 0.5s ease-in-out';
-        setTimeout(() => {
-            crystal.style.animation = '';
-        }, 500);
-    }
-    
-    // Typing effect for wisdom
-    wisdomDisplay.textContent = "";
-    let i = 0;
-    const typeInterval = setInterval(() => {
-        if (i < randomWisdom.length) {
-            wisdomDisplay.textContent += randomWisdom.charAt(i);
-            i++;
-        } else {
-            clearInterval(typeInterval);
-        }
-    }, 30);
-    
-    // Create mystical particles
-    createMysticParticles();
-}
-
-function createMysticParticles() {
-    const colors = ['#8a2be2', '#9932cc', '#ba55d3'];
-    
-    for (let i = 0; i < 20; i++) {
-        const particle = document.createElement('div');
-        particle.style.position = 'fixed';
-        particle.style.width = '6px';
-        particle.style.height = '6px';
-        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.borderRadius = '50%';
-        particle.style.pointerEvents = 'none';
-        particle.style.zIndex = '9999';
-        
-        // Start from oracle crystal position
-        const crystal = document.querySelector('.oracle-crystal');
-        if (crystal) {
-            const rect = crystal.getBoundingClientRect();
-            particle.style.left = rect.left + rect.width / 2 + 'px';
-            particle.style.top = rect.top + rect.height / 2 + 'px';
-        } else {
-            particle.style.left = '50%';
-            particle.style.top = '50%';
-        }
-        
-        document.body.appendChild(particle);
-        
-        const angle = (i / 20) * 2 * Math.PI;
+        const angle = (i / 20) * Math.PI * 2;
         const distance = 80 + Math.random() * 60;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
         
         particle.animate([
             { 
-                transform: 'translate(-50%, -50%) scale(1)',
-                opacity: 1
+                transform: 'translate(-50%, -50%) scale(1)', 
+                opacity: 1,
+                background: '#ff6600'
             },
             { 
-                transform: `translate(${Math.cos(angle) * distance - 50}%, ${Math.sin(angle) * distance - 50}%) scale(0)`,
-                opacity: 0
+                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0.2)`, 
+                opacity: 0,
+                background: '#ffa500'
             }
         ], {
-            duration: 1500,
-            easing: 'ease-out'
-        }).onfinish = () => {
-            if (document.body.contains(particle)) {
-                document.body.removeChild(particle);
-            }
-        };
+            duration: 800 + Math.random() * 400,
+            easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+        }).onfinish = () => particle.remove();
     }
 }
 
-// Portal Effects
-function ignitePortal(portal) {
-    createPortalEffect(portal, '🔥', '#ff6600');
+// PORTAL ENTRY SYSTEM
+function enterPortal(portalType) {
+    const portals = {
+        'burn': 'burnunfukbl.com',
+        'wear': 'wearunfukbl.com',
+        'get': 'getunfukbl.com',
+        'adventure': 'iwentunfukbl.com'
+    };
+    
+    const url = portals[portalType];
+    if (!url) return;
+    
+    // Create portal activation effect
+    createPortalTransition();
+    
+    setTimeout(() => {
+        showPortalActivation(url, portalType);
+    }, 1000);
 }
 
-function launchPortal(portal) {
-    createPortalEffect(portal, '🚀', '#0066ff');
+// PORTAL TRANSITION EFFECT
+function createPortalTransition() {
+    const transition = document.createElement('div');
+    transition.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, #ff6600 0%, #1a1a1a 80%);
+        z-index: 9999;
+        pointer-events: none;
+        opacity: 0;
+    `;
+    
+    document.body.appendChild(transition);
+    
+    transition.animate([
+        { 
+            opacity: 0, 
+            transform: 'scale(0) rotate(0deg)' 
+        },
+        { 
+            opacity: 0.95, 
+            transform: 'scale(1.5) rotate(180deg)' 
+        },
+        { 
+            opacity: 0, 
+            transform: 'scale(3) rotate(360deg)' 
+        }
+    ], {
+        duration: 1200,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+    }).onfinish = () => transition.remove();
 }
 
-function stellarPortal(portal) {
-    createPortalEffect(portal, '⭐', '#ffd700');
+// PORTAL ACTIVATION POPUP
+function showPortalActivation(url, portalType) {
+    const portalNames = {
+        'burn': 'Burn Portal',
+        'wear': 'Wear Portal',
+        'get': 'Get Portal',
+        'adventure': 'Adventures of Sizzle'
+    };
+    
+    const portalName = portalNames[portalType] || 'Unknown Portal';
+    
+    const popup = document.createElement('div');
+    popup.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ff6600, #ff8c00);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            font-family: 'Orbitron', monospace;
+            text-align: center;
+            z-index: 10000;
+            border: 4px solid #ffd700;
+            max-width: 450px;
+            box-shadow: 0 25px 60px rgba(255, 102, 0, 0.6);
+        ">
+            <h3 style="font-size: 1.8rem; margin-bottom: 20px;">🌀 ${portalName} Activated! 🌀</h3>
+            <p style="margin: 20px 0; font-size: 1.1rem;">Connecting to the legendary realm:</p>
+            <p style="font-size: 1.3rem; font-weight: 900; margin: 20px 0; color: #ffd700; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">${url}</p>
+            <p style="font-style: italic; font-size: 1rem; margin-bottom: 25px; opacity: 0.9;">Adventure awaits in the UNFUKBLverse!</p>
+            <button onclick="this.parentElement.parentElement.remove()" style="
+                background: #ffd700;
+                color: #1a1a1a;
+                border: none;
+                padding: 12px 25px;
+                border-radius: 25px;
+                font-weight: 900;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Close Portal</button>
+        </div>
+    `;
+    
+    document.body.appendChild(popup);
 }
 
-function fashionPortal(portal) {
-    createPortalEffect(portal, '👕', '#ff69b4');
+// LIVE COUNTERS
+function initCounters() {
+    // Update counters periodically for that dynamic feel
+    setInterval(() => {
+        updateRugCount();
+        updateMemorialCount();
+    }, 25000);
 }
 
-function createPortalEffect(portal, emoji, color) {
-    for (let i = 0; i < 15; i++) {
-        const particle = document.createElement('div');
-        particle.textContent = emoji;
-        particle.style.position = 'absolute';
-        particle.style.fontSize = '16px';
-        particle.style.pointerEvents = 'none';
-        particle.style.zIndex = '10';
-        particle.style.left = '50%';
-        particle.style.top = '50%';
-        
-        portal.appendChild(particle);
-        
-        const angle = (i / 15) * 2 * Math.PI;
-        const distance = 50 + Math.random() * 30;
-        
-        particle.animate([
-            { 
-                transform: 'translate(-50%, -50%) scale(1)',
-                opacity: 1
-            },
-            { 
-                transform: `translate(${Math.cos(angle) * distance - 50}%, ${Math.sin(angle) * distance - 50}%) scale(0)`,
-                opacity: 0
-            }
-        ], {
-            duration: 1000,
-            easing: 'ease-out'
-        }).onfinish = () => {
-            if (portal.contains(particle)) {
-                portal.removeChild(particle);
-            }
-        };
+function updateRugCount() {
+    const rugCounter = document.getElementById('rugs-destroyed');
+    if (rugCounter) {
+        const currentCount = parseInt(rugCounter.textContent.replace(/,/g, '')) || 1337;
+        const increment = Math.floor(Math.random() * 3) + 1;
+        rugCounter.textContent = (currentCount + increment).toLocaleString();
     }
 }
 
-// Smooth scrolling for navigation links
+function updateMemorialCount() {
+    const memorialCounter = document.getElementById('memorial-count');
+    if (memorialCounter) {
+        const currentCount = parseInt(memorialCounter.textContent) || 1337;
+        const increment = Math.floor(Math.random() * 2) + 1;
+        memorialCounter.textContent = currentCount + increment;
+    }
+}
+
+// SMOOTH SCROLL FOR NAVIGATION
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -639,86 +451,93 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll animations using Intersection Observer
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+// PERFORMANCE OPTIMIZATION
+const throttle = (func, limit) => {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
+// EASTER EGG - KONAMI CODE
+let konamiCode = [];
+const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
 
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const endTime = performance.now();
-    console.log(`🚀 UNFUKBL loaded in ${Math.round(endTime - startTime)}ms - Optimized for mobile-first experience!`);
+document.addEventListener('keydown', function(e) {
+    konamiCode.push(e.keyCode);
+    if (konamiCode.length > konamiSequence.length) {
+        konamiCode.shift();
+    }
     
-    // Epic ASCII art and status display
-    console.log(`
-🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-🔥                                                          🔥
-🔥    ██    ██ ███    ██ ███████ ██    ██ ██   ██ ██████    🔥
-🔥    ██    ██ ████   ██ ██      ██    ██ ██  ██  ██   ██   🔥
-🔥    ██    ██ ██ ██  ██ █████   ██    ██ █████   ██████    🔥
-🔥    ██    ██ ██  ██ ██ ██      ██    ██ ██  ██  ██   ██   🔥
-🔥     ██████  ██   ████ ██       ██████  ██   ██ ██████    🔥
-🔥                                                          🔥
-🔥          INTERACTIVE LORE PORTAL ACTIVATED               🔥
-🔥               We Burn Rugs — Not Trust                   🔥
-🔥                                                          🔥
-🔥  🐋 Whale Sacrifice Meter: ONLINE                        🔥
-🔥  📡 Rug Sensor: SCANNING SOLANA...                      🔥
-🔥  🔥 Live Burn Tracker: ACTIVE                           🔥
-🔥  ✨ Hidden Portals: DISCOVERED                          🔥
-🔥  🎵 Flame Whisper Audio: READY                          🔥
-🔥  💎 Diamond Hand Detector: CALIBRATED                   🔥
-🔥  🚀 Moon Mission Protocol: INITIALIZED                  🔥
-🔥                                                          🔥
-🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-    `);
-    
-    // Initialize all systems
-    console.log('🎮 Meme status bar initialized - Maximum chaos mode!');
-    console.log('🔥 Legendary button system activated!');
-    console.log('📡 Dynamic rug sensor initialized!');
-    console.log('🌓 Theme toggle initialized - Current theme: LIGHT');
-    console.log('📱 Improved mobile navigation initialized!');
-    console.log('🔥 Interactive burning rugs initialized!');
-    
-    // Add animation classes to elements
-    document.querySelectorAll('.stat-card, .leader-card, .universe-card, .feature-card, .store-item').forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
-    
-    // Start dynamic updates
-    setInterval(updateMemeStatus, 5000);
-    setInterval(updateRugSensor, 8000);
-    
-    // Initial updates
-    updateMemeStatus();
-    updateRugSensor();
-    
-    console.log('🔥 UNFUKBL Lore Portal activated! Welcome to the revolution.');
+    if (konamiCode.length === konamiSequence.length && 
+        konamiCode.every((key, index) => key === konamiSequence[index])) {
+        activateUltimateUNFUKBL();
+        konamiCode = [];
+    }
 });
 
-// Make functions globally available
-window.burnRug = burnRug;
-window.advanceLegendaryStatus = advanceLegendaryStatus;
-window.progressLegendary = progressLegendary;
-window.performRugScan = performRugScan;
-window.performQuantumScan = performQuantumScan;
-window.unlockSecretFlame = unlockSecretFlame;
-window.unlockDiamondVault = unlockDiamondVault;
-window.summonWhaleSpirit = summonWhaleSpirit;
-window.launchToMoon = launchToMoon;
-window.getSizzleWisdom = getSizzleWisdom;
-window.ignitePortal = ignitePortal;
-window.launchPortal = launchPortal;
-window.stellarPortal = stellarPortal;
-window.fashionPortal = fashionPortal;
+function activateUltimateUNFUKBL() {
+    const ultimate = document.createElement('div');
+    ultimate.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ffd700, #ff6600, #ff8c00);
+            color: white;
+            padding: 50px;
+            border-radius: 30px;
+            font-family: 'Orbitron', monospace;
+            text-align: center;
+            z-index: 10000;
+            border: 5px solid #ffd700;
+            max-width: 600px;
+            box-shadow: 0 30px 80px rgba(255, 102, 0, 0.8);
+            animation: ultimateGlow 2s ease-in-out infinite;
+        ">
+            <h2 style="font-size: 2.5rem; margin-bottom: 25px;">🏆 ULTIMATE UNFUKBL ACTIVATED! 🏆</h2>
+            <p style="font-size: 1.3rem; margin: 25px 0;">You have unlocked the legendary Konami power!</p>
+            <p style="font-size: 1.1rem; margin: 20px 0; font-style: italic;">The UNFUKBLverse bows to your dedication!</p>
+            <p style="font-size: 2rem; margin: 20px 0;">🔥 SIZZLE APPROVES 🔥</p>
+            <button onclick="this.parentElement.parentElement.remove()" style="
+                background: #ffd700;
+                color: #1a1a1a;
+                border: none;
+                padding: 15px 30px;
+                border-radius: 25px;
+                font-weight: 900;
+                cursor: pointer;
+                font-size: 1.1rem;
+                margin-top: 20px;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">LEGENDARY!</button>
+        </div>
+    `;
+    
+    // Add ultimate glow animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ultimateGlow {
+            0%, 100% { box-shadow: 0 30px 80px rgba(255, 102, 0, 0.8); }
+            50% { box-shadow: 0 40px 100px rgba(255, 215, 0, 1), 0 0 80px rgba(255, 102, 0, 0.9); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    document.body.appendChild(ultimate);
+    
+    // Auto-remove after 8 seconds
+    setTimeout(() => {
+        if (ultimate.parentNode) {
+            ultimate.remove();
+            style.remove();
+        }
+    }, 8000);
+}
