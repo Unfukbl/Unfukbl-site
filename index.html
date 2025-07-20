@@ -1,27 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UNFUKBL — The Meme Beyond the Rug</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNFUKBL - We Burn Rugs — Not Trust</title>
+    <meta name="description" content="UNFUKBL - The most anti-rug token in history. You don't just HODL, you forge the fire. Enter the Dark Phase.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <img src="images/unfukbl_animated_logo.PNG" alt="UNFUKBL Logo" class="logo" />
-    <h1>🔥 UNFUKBL</h1>
-    <p>The most anti-rug meme ever made. Born from the ashes. Lit by truth. Rug this? You won’t.</p>
-    
-    <div class="links">
-      <a href="https://getunfukbl.com">getunfukbl.com</a>
-      <a href="https://burnunfukbl.com">burnunfukbl.com</a>
-      <a href="https://iwentunfukbl.com">iwentunfukbl.com</a>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/sizzle-logo.png" alt="UNFUKBL" class="nav-logo">
+                <span class="nav-text">UNFUKBL</span>
+            </div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#phases">Burn Phases</a>
+                <a href="#manifesto">Manifesto</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#leaderboard">Leaderboard</a>
+            </div>
+            <div class="nav-cta">
+                <a href="https://getunfukbl.com" target="_blank" class="cta-btn">Get UNFUKBL</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <div class="socials">
-      <a href="https://x.com/unfukble" target="_blank">@unfukble</a>
-      <a href="https://instagram.com/theunfukbl" target="_blank">@theunfukbl</a>
-    </div>
-  </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Big Flame Logo -->
+                <div class="logo-container fade-in">
+                    <img src="images/sizzle-logo.png" alt="UNFUKBL Flame Logo" class="flame-logo">
+                </div>
+                
+                <!-- Main Tagline -->
+                <h1 class="main-tagline slide-up">
+                    WE BURN RUGS — NOT TRUST
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="subtitle slide-up-delay">
+                    You don't just HODL, you forge the fire. Enter the Dark Phase. Be UNFUKBL.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="cta-buttons slide-up-delay-2">
+                    <a href="https://burnunfukbl.com" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-fire"></i> Burn Tracker
+                    </a>
+                    <a href="https://getunfukbl.com" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-rocket"></i> Buy UNFUKBL
+                    </a>
+                    <a href="#manifesto" class="btn btn-outline">
+                        <i class="fas fa-scroll"></i> Read Manifesto
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Burn Ticker -->
+        <div class="burn-ticker">
+            <div class="ticker-content">
+                <span class="ticker-item">🔥 LIVE BURN: <strong id="liveBurnCount">1,234,567</strong> tokens destroyed</span>
+                <span class="ticker-item">📈 RUGS OUTBURNED: <strong id="rugCounter">42</strong> projects</span>
+                <span class="ticker-item">⚡ NEXT PHASE: <strong>Dark Phase</strong> in <span id="nextPhase">127</span> days</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Burn Phases Section -->
+    <section id="phases" class="burn-phases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Four Burn Phases</h2>
+                <p class="section-subtitle">From Daily Flame to Final Ember. Each phase burns harder.</p>
+            </div>
+
+            <div class="phases-grid">
+                <div class="phase-card active">
+                    <div class="phase-icon">🔥</div>
+                    <h3>Daily Flame</h3>
+                    <div class="phase-rate">1% Daily Burn</div>
+                    <p>Every day, 1% of supply burns. No mercy for paper hands. The fire never sleeps.</p>
+                    <div class="phase-status">ACTIVE</div>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-icon">⚒️</div>
+                    <h3>Community Forge</h3>
+                    <div class="phase-rate">Vote-Driven Burns</div>
+                    <p>Every 6 months, holders vote on burn rates. Democracy meets destruction.</p>
+                    <div class="phase-status">NEXT: 127 DAYS</div>
+                </div>
+
+                <div class="phase-card dark">
+                    <div class="phase-icon">🌑</div>
+                    <h3>Dark Phase</h3>
+                    <div class="phase-rate">50% Mega Burns</div>
+                    <p>Whales unlock massive burns. Only the strong survive. Enter if you dare.</p>
+                    <div class="phase-status">LOCKED</div>
+                </div>
+
+                <div class="phase-card final">
+                    <div class="phase-icon">💀</div>
+                    <h3>Final Ember</h3>
+                    <div class="phase-rate">??? Burns</div>
+                    <p>The last phase. The final burn. Only legends know what happens here.</p>
+                    <div class="phase-status">MYSTERY</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How to Be UNFUKBL</h2>
+                <p class="section-subtitle">Three steps to forge your destiny</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">💰</div>
+                    <h3>Buy $UNFUKBL</h3>
+                    <p>Purchase over $100? Trigger an instant burn. Every buy fuels the fire.</p>
+                    <a href="https://getunfukbl.com" target="_blank" class="step-link">Get Started →</a>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🗳️</div>
+                    <h3>Vote on Burns</h3>
+                    <p>Every 6 months, decide the next burn rate. Your voice shapes the flames.</p>
+                    <a href="https://burnunfukbl.com" target="_blank" class="step-link">Join Votes →</a>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">🌑</div>
+                    <h3>Enter the Dark</h3>
+                    <p>Unlock Dark Phase burns. Only diamond hands reach this level.</p>
+                    <a href="#phases" class="step-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="manifesto">
+        <div class="container">
+            <div class="manifesto-content">
+                <div class="manifesto-text">
+                    <h2 class="manifesto-title">The UNFUKBL Manifesto</h2>
+                    <div class="manifesto-body">
+                        <blockquote>
+                            "You don't just HODL, you forge the fire."
+                        </blockquote>
+                        
+                        <p>We are tired of rugs. Tired of broken promises. Tired of watching communities burn while founders laugh.</p>
+                        
+                        <p><strong>UNFUKBL is different.</strong> We burn rugs, not trust. Every day, 1% of our supply disappears forever. No exceptions. No mercy.</p>
+                        
+                        <p>Our whales don't dump. They wait. They vote. They forge the future with diamond hands and iron will.</p>
+                        
+                        <p>Enter the Dark Phase. Earn your Scorched Soul NFT. Become legend.</p>
+                        
+                        <p class="manifesto-signature">— The UNFUKBL Community</p>
+                    </div>
+                    
+                    <div class="manifesto-cta">
+                        <a href="https://iwentunfukbl.com" target="_blank" class="btn btn-dark">
+                            <i class="fas fa-users"></i> Join the Movement
+                        </a>
+                    </div>
+                </div>
+
+                <div class="manifesto-visual">
+                    <div class="burn-visualization">
+                        <div class="flame-ring">
+                            <div class="inner-flame"></div>
+                        </div>
+                        <div class="burn-stats">
+                            <div class="stat">
+                                <div class="stat-number" id="totalBurned">67.8M</div>
+                                <div class="stat-label">Tokens Burned</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" id="dailyBurnRate">1.0%</div>
+                                <div class="stat-label">Daily Burn Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Burn Roadmap</h2>
+                <p class="section-subtitle">Our path to glory, paved with fire</p>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-icon">✅</div>
+                    <div class="timeline-content">
+                        <h3>Genesis Burn</h3>
+                        <p>Contract deployed. First burns initiated. Community assembled.</p>
+                        <span class="timeline-date">Q4 2024</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item active">
+                    <div class="timeline-icon">🔥</div>
+                    <div class="timeline-content">
+                        <h3>Daily Flame Phase</h3>
+                        <p>1% daily burns active. Rug counter live. Scorched Soul NFTs launching.</p>
+                        <span class="timeline-date">Q1 2025 (NOW)</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">⚒️</div>
+                    <div class="timeline-content">
+                        <h3>Community Forge</h3>
+                        <p>First community vote on burn rates. Governance token snapshot.</p>
+                        <span class="timeline-date">Q2 2025</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🌑</div>
+                    <div class="timeline-content">
+                        <h3>Dark Phase Unlock</h3>
+                        <p>Whale-driven mega burns. 50% supply burns unlocked. Legends emerge.</p>
+                        <span class="timeline-date">Q4 2025</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item mystery">
+                    <div class="timeline-icon">💀</div>
+                    <div class="timeline-content">
+                        <h3>Final Ember</h3>
+                        <p>The ultimate burn. The final phase. Only the UNFUKBL survive.</p>
+                        <span class="timeline-date">2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hall of Flames</h2>
+                <p class="section-subtitle">Top burners earn eternal glory</p>
+            </div>
+
+            <div class="leaderboard-content">
+                <div class="leaderboard-tabs">
+                    <button class="tab-btn active" data-tab="burners">Top Burners</button>
+                    <button class="tab-btn" data-tab="holders">Diamond Hands</button>
+                    <button class="tab-btn" data-tab="nfts">Scorched Souls</button>
+                </div>
+
+                <div class="tab-content active" id="burners">
+                    <div class="leaderboard-list">
+                        <div class="leaderboard-item rank-1">
+                            <div class="rank">👑</div>
+                            <div class="user">FlameKing.eth</div>
+                            <div class="stat">2.4M burned</div>
+                            <div class="badge">Scorched Legend</div>
+                        </div>
+                        <div class="leaderboard-item rank-2">
+                            <div class="rank">🥈</div>
+                            <div class="user">BurnMaster</div>
+                            <div class="stat">1.8M burned</div>
+                            <div class="badge">Fire Forge</div>
+                        </div>
+                        <div class="leaderboard-item rank-3">
+                            <div class="rank">🥉</div>
+                            <div class="user">0x...Diamond</div>
+                            <div class="stat">1.2M burned</div>
+                            <div class="badge">Ember Soul</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="holders">
+                    <div class="leaderboard-list">
+                        <div class="leaderboard-item">
+                            <div class="rank">💎</div>
+                            <div class="user">DiamondWhale</div>
+                            <div class="stat">50M held</div>
+                            <div class="badge">Never Sold</div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank">💎</div>
+                            <div class="user">HODLGod</div>
+                            <div class="stat">32M held</div>
+                            <div class="badge">Iron Will</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="nfts">
+                    <div class="nft-grid">
+                        <div class="nft-card">
+                            <div class="nft-image">🔥</div>
+                            <h4>Scorched Soul #001</h4>
+                            <p>Legendary Genesis Burner</p>
+                        </div>
+                        <div class="nft-card">
+                            <div class="nft-image">⚡</div>
+                            <h4>Ember Spirit #023</h4>
+                            <p>Daily Flame Warrior</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-cta">
+                    <a href="https://burnunfukbl.com" target="_blank" class="btn btn-primary">
+                        View Full Leaderboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/sizzle-logo.png" alt="UNFUKBL" class="footer-logo">
+                    <h3>UNFUKBL</h3>
+                    <p>We Burn Rugs — Not Trust</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Burn Sites</h4>
+                        <ul>
+                            <li><a href="https://burnunfukbl.com" target="_blank">Burn Tracker</a></li>
+                            <li><a href="https://getunfukbl.com" target="_blank">How to Buy</a></li>
+                            <li><a href="https://iwentunfukbl.com" target="_blank">Community</a></li>
+                            <li><a href="https://wearunfukbl.com" target="_blank">Merch Store</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://x.com/unfukble" target="_blank">@unfukble</a></li>
+                            <li><a href="https://instagram.com/theunfukbl" target="_blank">@theunfukbl</a></li>
+                            <li><a href="#" target="_blank">Telegram</a></li>
+                            <li><a href="#" target="_blank">Discord</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#manifesto">Manifesto</a></li>
+                            <li><a href="#roadmap">Roadmap</a></li>
+                            <li><a href="#" target="_blank">Whitepaper</a></li>
+                            <li><a href="#" target="_blank">Smart Contract</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://x.com/unfukble" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/theunfukbl" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-link">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-link">
+                        <i class="fas fa-chart-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 UNFUKBL. The most anti-rug token in history. Be UNFUKBL.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
